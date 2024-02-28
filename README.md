@@ -49,8 +49,45 @@ média mensal de gastos.
  2. Programa que leia as notas e calcule a média de LP1 deste
 semestre, referente a um determinado aluno.
 
-  public class Main {
+
+import java.util.Scanner;
+
+public class Main {
     public static void main(String[] args) {
+        Scanner cubo = new Scanner(System.in);
+
+
+
+        System.out.println("Insira a P1: ");
+        double p1 = cubo.nextDouble();
+
+        System.out.println("Insira a E1: ");
+        double e1 = cubo.nextDouble();
+
+        System.out.println("Insira a E2: ");
+        double e2 = cubo.nextDouble();
+
+        System.out.println("Insira a API: ");
+        double api = cubo.nextDouble();
+
+        System.out.println("Insira o X: ");
+        double x = cubo.nextDouble();
+
+
+        double parte1 = (p1*0.6 +((e1+e2)/2)*0.4);
+        double media = (p1*0.6 +((e1+e2)/2)*0.4)*0.5+(Math.max(parte1 -5.9,0)/((p1*0.6+(e1+e2)/2)*0.4)-5.9)*(api*0.5)+x;
+
+        if (parte1 > 5.9) {
+            System.out.println("A média é: "+media);
+
+        } else if (media < 6 && media > 3.9) {
+            System.out.println("Não atingiu a nota!");
+        }
+
+
+    }
+}
+    
     
     
  
